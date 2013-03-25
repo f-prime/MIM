@@ -32,7 +32,7 @@ class MIM:
             if not data:
                 del users[obj]
                 break
-            print data
+           
             if ": /online" in data:
                 obj.send(str(len(users))+" users online.")
             else:
