@@ -15,7 +15,7 @@ class MIM:
         self.sock = socket.socket()
     
     def main(self):
-        self.sock.bind(('', self.port))
+        self.sock.bind(('0.0.0.0', self.port))
         self.sock.listen(5)
         while True:
             obj, con = self.sock.accept()
