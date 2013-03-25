@@ -22,6 +22,7 @@ class mim_client:
             time.sleep(5)
             self.main_loop()
         else:
+            thread.start_new_thread(mim.recv, ())
             while True:
                 msg = raw_input()
                 self.sock.send(self.user+": "+msg)
@@ -40,5 +41,4 @@ if __name__ == "__main__":
         print "Usage: client.py <ip> <port>"
         exit()
     mim = mim_client()
-    thread.start_new_thread(mim.recv, ())
     mim.main_loop()
