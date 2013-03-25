@@ -25,7 +25,8 @@ class mim_client:
             thread.start_new_thread(mim.recv, ())
             while True:
                 msg = raw_input()
-                self.sock.send(self.user+": "+msg)
+                if msg != '':
+                    self.sock.send(self.user+": "+msg)
     def recv(self):
         while True:
             data = self.sock.recv(1024)
