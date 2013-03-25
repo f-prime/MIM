@@ -37,8 +37,11 @@ class MIM:
                 obj.send(str(len(users))+" users online.")
             else:
                 for x in users:
-                    x.send(data)
-
+                    try:
+                        x.send(data)
+                    except:
+                        x.close()
+                        del users[x]
 if __name__ == "__main__":
     mim = MIM()
     thread.start_new_thread(mim.check, ())
