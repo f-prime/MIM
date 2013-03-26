@@ -4,7 +4,7 @@ import sys
 import time
 import urllib
 
-version_md5 = "e07439c52e3f28cd92acc766ce7bc2ba"
+version_md5 = "ec36986a3536efd5c16834bf9ab704aa"
 
 class mim_client:
     def __init__(self):
