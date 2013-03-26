@@ -2,6 +2,9 @@ import thread
 import socket
 import sys
 import time
+import urllib
+
+version_md5 = "e07439c52e3f28cd92acc766ce7bc2ba"
 
 class mim_client:
     def __init__(self):
@@ -38,6 +41,9 @@ class mim_client:
                     print "\n"+data
 
 if __name__ == "__main__":
+    if urllib.urlopen("https://raw.github.com/Max00355/MIM/master/md5.txt").read() != version_md5:
+        print "Client out of date, get the new one here: https://raw.github.com/Max00355/MIM/master/client.py"
+        raw_input()
     if len(sys.argv) < 2:
         print "Usage: client.py <ip> <port>"
         exit()
