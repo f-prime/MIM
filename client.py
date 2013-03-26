@@ -35,7 +35,7 @@ class mim_client:
                 break
             else:
                 if self.user+":" not in data:
-                    print data
+                    print "\n"+data
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
