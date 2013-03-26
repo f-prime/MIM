@@ -41,9 +41,10 @@ class mim_client:
                     print "\n"+data
 
 if __name__ == "__main__":
-    if urllib.urlopen("https://raw.github.com/Max00355/MIM/master/md5.txt").read() != version_md5:
+    if version_md5 not in urllib.urlopen("https://raw.github.com/Max00355/MIM/master/md5.txt").read():
         print "Client out of date, get the new one here: https://raw.github.com/Max00355/MIM/master/client.py"
         raw_input()
+        exit()
     if len(sys.argv) < 2:
         print "Usage: client.py <ip> <port>"
         exit()
