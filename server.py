@@ -18,7 +18,11 @@ class MIM:
         self.sock.bind(('0.0.0.0', self.port))
         self.sock.listen(5)
         while True:
-            obj, con = self.sock.accept()
+            try:
+                obj, con = self.sock.accept()
+            except KeyboardInterrupt:
+                for x in users:
+                    x.close()
             users[obj] = con
             thread.start_new_thread(self.handle, (obj,))
     def check(self):
