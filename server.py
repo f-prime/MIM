@@ -34,9 +34,9 @@ class MIM:
                 break
            
             if ": /online" in data:
-                a = time.localtime()
                 obj.send(str(len(users))+" users online.")
             else:
+                a = time.localtime()
                 for x in users:
                     try:
                         x.send(str(a[3])+":"+str(a[4])+":"+str(a[5])+" "+data)
